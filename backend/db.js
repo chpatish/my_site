@@ -1,20 +1,18 @@
 const { Pool } = require('pg');
 
+// Amvera сама подставит сюда длинную строку из Supabase, которую мы сохранили в переменные
 const pool = new Pool({
-  user: 'postgres',          // Стандартный пользователь PostgreSQL
-  host: 'localhost',         // База находится на вашем компьютере
-  database: 'my_site',       // Имя базы, которую вы создали в pgAdmin
-  password: '1234',    // ⚠️ ОБЯЗАТЕЛЬНО впишите сюда ваш пароль от pgAdmin!
-  port: 5432,                // Стандартный порт PostgreSQL
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false } // Без этой строчки облако Supabase заблокирует хостинг
 });
 
 async function connectDB() {
   try {
     const client = await pool.connect();
-    console.log('ПОБЕДА! Успешно подключились к вашей базе PostgreSQL (my_site)!');
-    client.release(); // Возвращаем соединение в пул
+    console.log('ПОБЕДА! Успешно подключились к удаленной базе PostgreSQL!');
+    client.release();
   } catch (err) {
-    console.error('Ошибка подключения к вашему PostgreSQL:', err.message);
+    console.error('Ошибка подключения к PostgreSQL:', err.message);
     throw err;
   }
 }

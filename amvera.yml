@@ -1,0 +1,9 @@
+meta:
+  environment: node
+  toolchain:
+    name: npm
+    version: 18
+build:
+  command: npm install
+run:
+  command: node backend/index.js
