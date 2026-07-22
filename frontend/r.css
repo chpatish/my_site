@@ -1,0 +1,147 @@
+html{
+    text-align: center;
+    font-family:'Arial Narrow';
+    font-size: 24px;
+    position: relative;
+}    
+body{
+    background-image: url(https://images.unsplash.com/photo-1542708993627-b6e5bbae43c4?q=80&w=2644&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color:rgb(0, 127, 49);
+    
+    
+}
+.p{
+    background-color: rgba(8, 23, 41, 0.876);
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    border-radius: 7px;
+    
+    
+}
+h1{
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgb(208, 210, 75);
+}
+form{
+    margin-bottom: 3px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
+
+    
+}
+form > div{
+    
+    display: flex;
+    justify-content: center;
+    
+}
+form label{
+    
+    height: 50px;
+    width: 50px;
+    background-color: #ffffff;
+    fill: rgba(0, 0, 0, 0.474);
+    color: rgba(0, 0, 0, 0.474);
+    border-radius: 10px 0px 0px 10px;
+    /* icons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    /* font-weight: 500; */
+    
+    
+}
+
+
+
+
+form input{
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: bold;
+    border-radius: 0px 10px 10px 0px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(255, 255, 255);
+    
+    transition: 120ms ease;
+    border-left: none;
+    
+}
+form input:hover{
+    border-color: rgba(0, 0, 0, 0.474);
+}
+
+form input:focus{
+    outline: none;
+    border-color: rgb(60, 187, 92);
+}
+div:has(input:focus) > label{
+    background-color: rgb(60, 187, 92);
+    color: white;
+    fill: white;
+
+}
+form input::placeholder{
+    color: rgba(0, 0, 0, 0.474);
+}
+form button{
+    margin-top: 5px;
+    border: none;
+    border-radius: 1000px;
+    padding: 0.85em 3em;
+    background-color: white;
+    
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    
+    transition: 250ms ease;
+    color: rgba(0, 0, 0, 0.474);
+
+      
+}    
+form button:hover{
+    background-color:rgb(130, 129, 129);
+    color: white;
+}
+form button:focus{
+    background-color:rgb(149, 203, 162);
+    color: white;
+    outline: none;
+}
+a{
+    text-decoration: none;
+    color: rgb(208, 210, 75);
+}
+a:hover{
+    text-decoration: underline;
+}
+
+form div.wrong label{
+    background-color: rgb(217, 0, 0);
+    fill: white;
+    color: white;
+}
+form div.wrong input{
+    border-color: rgb(217, 0, 0);
+}
+#error-m{
+    color: rgb(217, 0, 0);
+}
